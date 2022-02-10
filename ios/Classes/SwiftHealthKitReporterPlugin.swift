@@ -814,16 +814,16 @@ extension SwiftHealthKitReporterPlugin {
                         return
                     }
                     do {
-                        guard let serie = serie else {
-                            result(
-                                FlutterError(
-                                    code: "HeartbeatSeriesQuery",
-                                    message: "Series samples was null",
-                                    details: nil
-                                )
-                            )
-                            return
-                        }
+//                         guard let serie = serie else {
+//                             result(
+//                                 FlutterError(
+//                                     code: "HeartbeatSeriesQuery",
+//                                     message: "Series samples was null",
+//                                     details: nil
+//                                 )
+//                             )
+//                             return
+//                         }
                         result(try serie.encoded())
                     } catch {
                         result(
