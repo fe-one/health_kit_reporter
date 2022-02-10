@@ -35,8 +35,8 @@ extension HeartbeatSeriesQueryStreamHandler: StreamHandlerProtocol {
                 predicate: predicate
             ) { (heartbeatSerie, error) in
                 guard
-                    error == nil,
-                    let heartbeatSerie = heartbeatSerie
+                    error == nil
+                    // let heartbeatSerie = heartbeatSerie
                 else {
                     return
                 }
