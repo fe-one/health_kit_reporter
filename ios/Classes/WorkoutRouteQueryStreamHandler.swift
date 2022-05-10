@@ -34,12 +34,10 @@ extension WorkoutRouteQueryStreamHandler: StreamHandlerProtocol {
             let query = try reporter.reader.workoutRouteQuery(
                 predicate: predicate
             ) { (workoutRoute, error) in
-                guard
-                    error == nil,
-                    let workoutRoute = workoutRoute
-                else {
+                if error != nil || workoutRoute == nil {
                     return
                 }
+                let workoutRoute = workoutRoute
                 do {
                     events(try workoutRoute.encoded())
                 } catch {
